@@ -34,7 +34,7 @@
           @click="publish"
           class="h-12 flex items-center space-x-2 px-4 border-r text-xs font-medium bg-white text-slate-700"
         >
-          <span> Publish </span>
+          <span> Buy 0xSocial </span>
           <icon name="ph:paper-plane-tilt-bold" class="h-4 w-4" />
         </button>
         <a
@@ -53,7 +53,7 @@
       target="_blank"
       class="absolute bottom-0 right-0 bg-white rounded-tl-lg shadow px-4 py-1 font-medium text-sm text-gray-500"
     >
-      Made by Fayaz
+      Made by 0xSocial 
     </a>
   </div>
 </template>
