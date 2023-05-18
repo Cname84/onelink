@@ -60,3 +60,28 @@
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      data: {
+        n: '',
+        d: '',
+        i: '',
+        t: '',
+        tg: '',
+        d: '',
+        e: '',
+        y: '',
+        ls: '',
+      }
+    };
+  },
+  methods: {
+    prefillDemoData() {
+      // Add your prefilling logic here
+    }
+  }
+};
+</script>
+
