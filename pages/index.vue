@@ -1,7 +1,7 @@
 <template>
   <div class="h-screen flex flex-col">
-    <div class="h-1/4 bg-gradient-to-b from-blue-500 to-blue-700 text-white flex items-center">
-      <div class="container mx-auto px-8">
+    <div class="h-1/4 bg-gradient-to-b from-blue-500 to-blue-700 text-white flex items-center justify-center">
+      <div class="container mx-auto text-center">
         <h1 class="text-4xl font-bold mb-4">Welcome to 0xSocial</h1>
         <p class="text-lg mb-8">Seamless social profile creations.</p>
         <a
@@ -13,9 +13,9 @@
         </a>
       </div>
     </div>
-    <div class="flex-1 grid grid-cols-3 bg-slate-100">
-      <div class="col-span-2 flex">
-        <div class="overflow-y-auto p-8">
+    <div class="flex-1 flex">
+      <div class="w-2/3 bg-slate-100 p-8">
+        <div class="overflow-y-auto">
           <app-form-profile
             v-model:name="data.n"
             v-model:desc="data.d"
@@ -33,7 +33,7 @@
           <app-form-links v-model="data.ls"></app-form-links>
         </div>
       </div>
-      <div class="col-span-1 border-t bg-white flex flex-col items-center justify-center">
+      <div class="w-1/3 border-t bg-white flex flex-col items-center justify-center">
         <a
           href="https://t.me/OxSocial"
           target="_blank"
@@ -60,24 +60,32 @@ export default {
   data() {
     return {
       data: {
-        n: '',
-        d: '',
-        i: '',
-        t: '',
-        tg: '',
-        discord: '',
-        e: '',
-        y: '',
-        ls: []
-      }
+        n: "",
+        d: "",
+        i: "",
+        t: "",
+        tg: "",
+        discord: "",
+        e: "",
+        y: "",
+        ls: [],
+      },
     };
-  }
+  },
 };
 </script>
 
 <style scoped>
 .container {
   max-width: 960px;
+}
+
+.container a {
+  text-decoration: none;
+}
+
+.container a:hover {
+  text-decoration: underline;
 }
 </style>
 
