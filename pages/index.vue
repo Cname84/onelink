@@ -18,7 +18,7 @@
           v-model:email="data.e"
           v-model:whatsapp="data.w"
           v-model:youtube="data.y"
-        />
+             />
         <app-form-hr />
         <app-form-links v-model="data.ls" />
       </div>
@@ -27,9 +27,11 @@
           @click="prefillDemoData"
           class="h-12 flex items-center space-x-2 px-4 border-r text-xs font-medium bg-white text-slate-700"
         >
-          <span> demo </span>
+          <span> Add demo data </span>
           <icon name="mdi:code-json" class="h-4 w-4" />
         </button>
+          @click="publish"
+          class="h-12 flex items-center space-x-2 px-4 border-r text-xs font-medium bg-white text-slate-700"
         <a
           href="https://t.me/OxSocial"
           target="_blank"
