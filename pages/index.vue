@@ -27,7 +27,7 @@
           @click="prefillDemoData"
           class="h-12 flex items-center space-x-2 px-4 border-r text-xs font-medium bg-white text-slate-700"
         >
-          <span> Add demo data </span>
+          <span> demo </span>
           <icon name="mdi:code-json" class="h-4 w-4" />
         </button>
         <a
@@ -75,7 +75,7 @@ const prefillDemoData = () => {
   data.value = {
     n: "Elon Musk",
     d: "I’m Elon Musk, the richest person on earth. Also a pro memer.",
-    i: "https://i.insider.com/56743fad72f2c12a008b6cc0",
+    i: "https://image.cnbcfm.com/api/v1/image/107149350-1668034438907-musk2.jpg?v=1684168047",
     f: "https://www.facebook.com/john_snow",
     t: "https://twitter.com/john_snow",
     ig: "https://www.instagram.com/john_snow",
