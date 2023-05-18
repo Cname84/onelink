@@ -6,17 +6,17 @@
           v-model:name="data.n"
           v-model:desc="data.d"
           v-model:image="data.i"
-        />
-        <app-form-hr />
+        ></app-form-profile>
+        <app-form-hr></app-form-hr>
         <app-form-social-links
           v-model:twitter="data.t"
           v-model:telegram="data.tg"
           v-model:discord="data.d"
           v-model:email="data.e"
           v-model:youtube="data.y"
-        />
-        <app-form-hr />
-        <app-form-links v-model="data.ls" />
+        ></app-form-social-links>
+        <app-form-hr></app-form-hr>
+        <app-form-links v-model="data.ls"></app-form-links>
       </div>
       <div class="border-t bg-white flex items-center">
         <button
@@ -24,19 +24,15 @@
           class="h-12 flex items-center space-x-2 px-4 border-r text-xs font-medium bg-white text-slate-700"
         >
           <span> Demonstration </span>
-          <icon name="mdi:code-json" class="h-4 w-4" />
+          <icon name="mdi:code-json" class="h-4 w-4"></icon>
         </button>
-        <button
-          @click="publish"
-          class="h-12 flex items-center space-x-2 px-4 border-r text-xs font-medium bg-white text-slate-700"
-        >
         <a
           href="https://t.me/OxSocial"
           target="_blank"
           class="h-12 flex items-center space-x-2 px-4 border-r text-xs font-medium bg-white text-slate-700"
         >
           <span>Telegram</span>
-          <icon name="ph:paper-plane-tilt-bold" class="h-4 w-4" />
+          <icon name="ph:paper-plane-tilt-bold" class="h-4 w-4"></icon>
         </a>
       </div>
     </div>
@@ -53,7 +49,7 @@
         </a>
       </div>
     </div>
-    <app-form-preview :data="data" />
+    <app-form-preview :data="data"></app-form-preview>
     <a
       href="https://twitter.com/0xsocialETH"
       target="_blank"
