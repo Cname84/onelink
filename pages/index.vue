@@ -9,14 +9,10 @@
         />
         <app-form-hr />
         <app-form-social-links
-          v-model:facebook="data.f"
           v-model:twitter="data.t"
-          v-model:instagram="data.ig"
-          v-model:github="data.gh"
           v-model:telegram="data.tg"
-          v-model:linkedin="data.l"
+          v-model:discord="data.d"
           v-model:email="data.e"
-          v-model:whatsapp="data.w"
           v-model:youtube="data.y"
         />
         <app-form-hr />
