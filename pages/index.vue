@@ -13,7 +13,7 @@
         </a>
       </div>
     </div>
-    <div class="col-span-2 h-3/4 flex flex-col bg-slate-100">
+    <div class="col-span-3 h-3/4 flex flex-col bg-slate-100">
       <div class="flex-1 overflow-y-auto p-8">
         <app-form-profile
           v-model:name="data.n"
@@ -59,3 +59,4 @@
     </a>
   </div>
 </template>
+
