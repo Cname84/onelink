@@ -46,7 +46,7 @@
     </div>
     <div class="col-span-1 h-screen flex flex-col bg-gradient-to-b from-blue-500 to-blue-700 text-white">
       <div class="flex flex-col justify-center h-full px-8">
-        <h1 class="text-4xl font-bold mb-4">Welcome to My App</h1>
+        <h1 class="text-4xl font-bold mb-4">Welcome to 0xsocial</h1>
         <p class="text-lg mb-8">Discover the power of our amazing features.</p>
         <a
           href="https://example.com"
