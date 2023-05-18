@@ -1,6 +1,6 @@
 <template>
-  <div class="h-screen grid grid-cols-3 divide-x">
-    <div class="col-span-3 h-1/4 flex flex-col bg-gradient-to-b from-blue-500 to-blue-700 text-white">
+  <div class="h-screen flex flex-col">
+    <div class="h-1/4 bg-gradient-to-b from-blue-500 to-blue-700 text-white">
       <div class="flex flex-col justify-center h-full px-8">
         <h1 class="text-4xl font-bold mb-4">Welcome to 0xSocial</h1>
         <p class="text-lg mb-8">Seamless social profile creations.</p>
@@ -13,8 +13,8 @@
         </a>
       </div>
     </div>
-    <div class="col-span-3 h-3/4 flex flex-col bg-slate-100">
-      <div class="flex-1 overflow-y-auto p-8">
+    <div class="flex-1 grid grid-cols-3 divide-x bg-slate-100">
+      <div class="col-span-2 overflow-y-auto p-8">
         <app-form-profile
           v-model:name="data.n"
           v-model:desc="data.d"
@@ -31,12 +31,12 @@
         <app-form-hr></app-form-hr>
         <app-form-links v-model="data.ls"></app-form-links>
       </div>
-      <div class="border-t bg-white flex items-center">
+      <div class="col-span-1 border-t bg-white flex items-center">
         <button
           @click="prefillDemoData"
           class="h-12 flex items-center space-x-2 px-4 border-r text-xs font-medium bg-white text-slate-700"
         >
-          <span> Demonstration </span>
+          <span>Demonstration</span>
           <icon name="mdi:code-json" class="h-4 w-4"></icon>
         </button>
         <a
@@ -53,7 +53,7 @@
     <a
       href="https://twitter.com/0xsocialETH"
       target="_blank"
-      class="absolute bottom-0 right-0 bg-white rounded-tl-lg shadow px-4 py-1 font-medium text-sm text-gray-500"
+      class="bg-white rounded-tl-lg shadow px-4 py-1 font-medium text-sm text-gray-500 self-end"
     >
       Made by 0xSocial
     </a>
