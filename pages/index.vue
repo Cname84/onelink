@@ -1,13 +1,16 @@
+Certainly! Here's an updated version of the code with improved layout and alignment:
+
+```vue
 <template>
   <div class="h-screen flex flex-col">
-    <div class="h-1/4 bg-gradient-to-b from-blue-500 to-blue-700 text-white">
-      <div class="flex flex-col justify-center h-full px-8">
+    <div class="h-1/4 bg-gradient-to-b from-blue-500 to-blue-700 text-white flex items-center justify-center">
+      <div class="text-center">
         <h1 class="text-4xl font-bold mb-4">Welcome to 0xSocial</h1>
         <p class="text-lg mb-8">Seamless social profile creations.</p>
         <a
           href="https://example.com"
           target="_blank"
-          class="py-2 px-6 bg-white text-blue-500 rounded-full font-medium text-lg shadow hover:bg-blue-100"
+          class="py-2 px-6 bg-white text-blue-500 rounded-full font-medium text-lg shadow hover:bg-blue-100 inline-block"
         >
           Get Started
         </a>
@@ -36,7 +39,7 @@
       <div class="col-span-1 border-t bg-white flex flex-col items-center justify-center">
         <button
           @click="prefillDemoData"
-          class="h-12 flex items-center space-x-2 px-4 border-b text-xs font-medium bg-white text-slate-700"
+          class="h-12 flex items-center space-x-2 px-4 border-b text-sm font-medium bg-blue-500 text-white hover:bg-blue-600 rounded"
         >
           <span>Demonstration</span>
           <icon name="mdi:code-json" class="h-4 w-4"></icon>
@@ -44,14 +47,14 @@
         <a
           href="https://t.me/OxSocial"
           target="_blank"
-          class="h-12 flex items-center space-x-2 px-4 border-b text-xs font-medium bg-white text-slate-700"
+          class="h-12 flex items-center space-x-2 px-4 border-b text-sm font-medium bg-white text-slate-700 hover:bg-gray-100 rounded"
         >
           <span>Telegram</span>
           <icon name="ph:paper-plane-tilt-bold" class="h-4 w-4"></icon>
         </a>
       </div>
     </div>
-    <app-form-preview :data="data"></app-form-preview>
+    <app-form-preview :data="data" class="p-8"></app-form-preview>
     <a
       href="https://twitter.com/0xsocialETH"
       target="_blank"
