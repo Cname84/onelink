@@ -32,13 +32,6 @@
         <app-form-links v-model="data.ls"></app-form-links>
       </div>
       <div class="col-span-1 border-t bg-white flex items-center">
-        <button
-          @click="prefillDemoData"
-          class="h-12 flex items-center space-x-2 px-4 border-r text-xs font-medium bg-white text-slate-700"
-        >
-          <span>Demonstration</span>
-          <icon name="mdi:code-json" class="h-4 w-4"></icon>
-        </button>
         <a
           href="https://t.me/OxSocial"
           target="_blank"
@@ -59,4 +52,25 @@
     </a>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      data: {
+        n: '',
+        d: '',
+        i: '',
+        t: '',
+        tg: '',
+        discord: '',
+        e: '',
+        y: '',
+        ls: []
+      }
+    };
+  }
+};
+</script>
+
 
