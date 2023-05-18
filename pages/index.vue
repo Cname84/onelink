@@ -1,22 +1,6 @@
-Certainly! Here's an updated version of the code with improved layout and alignment:
-
-```vue
 <template>
-  <div class="h-screen flex flex-col">
-    <div class="h-1/4 bg-gradient-to-b from-blue-500 to-blue-700 text-white flex items-center justify-center">
-      <div class="text-center">
-        <h1 class="text-4xl font-bold mb-4">Welcome to 0xSocial</h1>
-        <p class="text-lg mb-8">Seamless social profile creations.</p>
-        <a
-          href="https://example.com"
-          target="_blank"
-          class="py-2 px-6 bg-white text-blue-500 rounded-full font-medium text-lg shadow hover:bg-blue-100 inline-block"
-        >
-          Get Started
-        </a>
-      </div>
-    </div>
-    <div class="flex-1 grid grid-cols-3 bg-slate-100">
+  <div class="h-screen flex flex-col bg-slate-100">
+    <div class="flex-1 grid grid-cols-3">
       <div class="col-span-2 flex">
         <div class="overflow-y-auto p-8">
           <app-form-profile
@@ -58,7 +42,7 @@ Certainly! Here's an updated version of the code with improved layout and alignm
     <a
       href="https://twitter.com/0xsocialETH"
       target="_blank"
-      class="bg-white rounded-tl-lg shadow px-4 py-1 font-medium text-sm text-gray-500 self-end"
+      class="absolute bottom-0 right-0 bg-white rounded-tl-lg shadow px-4 py-1 font-medium text-sm text-gray-500"
     >
       Made by 0xSocial
     </a>
@@ -84,6 +68,5 @@ export default {
   }
 };
 </script>
-
 
 
