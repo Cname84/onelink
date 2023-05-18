@@ -13,29 +13,31 @@
         </a>
       </div>
     </div>
-    <div class="flex-1 grid grid-cols-3 divide-x bg-slate-100">
-      <div class="col-span-2 overflow-y-auto p-8">
-        <app-form-profile
-          v-model:name="data.n"
-          v-model:desc="data.d"
-          v-model:image="data.i"
-        ></app-form-profile>
-        <app-form-hr></app-form-hr>
-        <app-form-social-links
-          v-model:twitter="data.t"
-          v-model:telegram="data.tg"
-          v-model:discord="data.d"
-          v-model:email="data.e"
-          v-model:youtube="data.y"
-        ></app-form-social-links>
-        <app-form-hr></app-form-hr>
-        <app-form-links v-model="data.ls"></app-form-links>
+    <div class="flex-1 grid grid-cols-3 bg-slate-100">
+      <div class="col-span-2 flex">
+        <div class="overflow-y-auto p-8">
+          <app-form-profile
+            v-model:name="data.n"
+            v-model:desc="data.d"
+            v-model:image="data.i"
+          ></app-form-profile>
+          <app-form-hr></app-form-hr>
+          <app-form-social-links
+            v-model:twitter="data.t"
+            v-model:telegram="data.tg"
+            v-model:discord="data.d"
+            v-model:email="data.e"
+            v-model:youtube="data.y"
+          ></app-form-social-links>
+          <app-form-hr></app-form-hr>
+          <app-form-links v-model="data.ls"></app-form-links>
+        </div>
       </div>
-      <div class="col-span-1 border-t bg-white flex items-center">
+      <div class="col-span-1 border-t bg-white flex flex-col items-center justify-center">
         <a
           href="https://t.me/OxSocial"
           target="_blank"
-          class="h-12 flex items-center space-x-2 px-4 border-r text-xs font-medium bg-white text-slate-700"
+          class="h-12 flex items-center space-x-2 px-4 border-b text-xs font-medium bg-white text-slate-700"
         >
           <span>Telegram</span>
           <icon name="ph:paper-plane-tilt-bold" class="h-4 w-4"></icon>
