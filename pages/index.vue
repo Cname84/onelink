@@ -1,21 +1,21 @@
 <template>
   <div class="h-screen flex flex-col">
-    <div class="h-1/4 bg-gradient-to-b from-blue-500 to-blue-700 text-white flex items-center justify-center">
-      <div class="container mx-auto text-center">
+    <div class="h-1/4 bg-gradient-to-b from-blue-500 to-blue-700 text-white">
+      <div class="flex flex-col justify-center h-full px-8">
         <h1 class="text-4xl font-bold mb-4">Welcome to 0xSocial</h1>
         <p class="text-lg mb-8">Seamless social profile creations.</p>
         <a
           href="https://example.com"
           target="_blank"
-          class="py-3 px-8 bg-white text-blue-500 rounded-full font-medium text-lg shadow hover:bg-blue-100"
+          class="py-2 px-6 bg-white text-blue-500 rounded-full font-medium text-lg shadow hover:bg-blue-100"
         >
           Get Started
         </a>
       </div>
     </div>
-    <div class="flex-1 flex">
-      <div class="w-2/3 bg-slate-100 p-8">
-        <div class="overflow-y-auto">
+    <div class="flex-1 grid grid-cols-3 bg-slate-100">
+      <div class="col-span-2 flex">
+        <div class="overflow-y-auto p-8">
           <app-form-profile
             v-model:name="data.n"
             v-model:desc="data.d"
@@ -33,7 +33,14 @@
           <app-form-links v-model="data.ls"></app-form-links>
         </div>
       </div>
-      <div class="w-1/3 border-t bg-white flex flex-col items-center justify-center">
+      <div class="col-span-1 border-t bg-white flex flex-col items-center justify-center">
+        <button
+          @click="prefillDemoData"
+          class="h-12 flex items-center space-x-2 px-4 border-b text-xs font-medium bg-white text-slate-700"
+        >
+          <span>Demonstration</span>
+          <icon name="mdi:code-json" class="h-4 w-4"></icon>
+        </button>
         <a
           href="https://t.me/OxSocial"
           target="_blank"
@@ -60,33 +67,20 @@ export default {
   data() {
     return {
       data: {
-        n: "",
-        d: "",
-        i: "",
-        t: "",
-        tg: "",
-        discord: "",
-        e: "",
-        y: "",
-        ls: [],
-      },
+        n: '',
+        d: '',
+        i: '',
+        t: '',
+        tg: '',
+        discord: '',
+        e: '',
+        y: '',
+        ls: []
+      }
     };
-  },
+  }
 };
 </script>
 
-<style scoped>
-.container {
-  max-width: 960px;
-}
-
-.container a {
-  text-decoration: none;
-}
-
-.container a:hover {
-  text-decoration: underline;
-}
-</style>
 
 
