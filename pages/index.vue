@@ -1,6 +1,19 @@
 <template>
   <div class="h-screen grid grid-cols-3 divide-x">
-    <div class="col-span-2 h-screen flex flex-col bg-slate-100">
+    <div class="col-span-3 h-1/4 flex flex-col bg-gradient-to-b from-blue-500 to-blue-700 text-white">
+      <div class="flex flex-col justify-center h-full px-8">
+        <h1 class="text-4xl font-bold mb-4">Welcome to 0xSocial</h1>
+        <p class="text-lg mb-8">Seamless social profile creations.</p>
+        <a
+          href="https://example.com"
+          target="_blank"
+          class="py-2 px-6 bg-white text-blue-500 rounded-full font-medium text-lg shadow hover:bg-blue-100"
+        >
+          Get Started
+        </a>
+      </div>
+    </div>
+    <div class="col-span-2 h-3/4 flex flex-col bg-slate-100">
       <div class="flex-1 overflow-y-auto p-8">
         <app-form-profile
           v-model:name="data.n"
@@ -36,19 +49,6 @@
         </a>
       </div>
     </div>
-    <div class="col-span-1 h-screen flex flex-col bg-gradient-to-b from-blue-500 to-blue-700 text-white">
-      <div class="flex flex-col justify-center h-full px-8">
-        <h1 class="text-4xl font-bold mb-4">Welcome to 0xSocial</h1>
-        <p class="text-lg mb-8">Seamless social profile creations.</p>
-        <a
-          href="https://example.com"
-          target="_blank"
-          class="py-2 px-6 bg-white text-blue-500 rounded-full font-medium text-lg shadow hover:bg-blue-100"
-        >
-          Get Started
-        </a>
-      </div>
-    </div>
     <app-form-preview :data="data"></app-form-preview>
     <a
       href="https://twitter.com/0xsocialETH"
@@ -59,29 +59,3 @@
     </a>
   </div>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      data: {
-        n: '',
-        d: '',
-        i: '',
-        t: '',
-        tg: '',
-        d: '',
-        e: '',
-        y: '',
-        ls: '',
-      }
-    };
-  },
-  methods: {
-    prefillDemoData() {
-      // Add your prefilling logic here
-    }
-  }
-};
-</script>
-
