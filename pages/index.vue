@@ -75,7 +75,7 @@ const prefillDemoData = () => {
   data.value = {
     n: "Elon Musk",
     d: "I’m Elon Musk, the richest person on earth. Also a pro memer.",
-    i: "https://i.insider.com/56743fad72f2c12a008b6cc0",
+    i: "https://upload.wikimedia.org/wikipedia/commons/3/34/Elon_Musk_Royal_Society_%28crop2%29.jpg",
     f: "https://www.facebook.com/john_snow",
     t: "https://twitter.com/john_snow",
     ig: "https://www.instagram.com/john_snow",
