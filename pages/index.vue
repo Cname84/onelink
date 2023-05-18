@@ -1,13 +1,13 @@
 <template>
   <div class="h-screen flex flex-col">
-    <div class="h-1/4 bg-gradient-to-b from-blue-500 to-blue-700 text-white">
-      <div class="flex flex-col justify-center h-full px-8">
+    <div class="h-1/4 bg-gradient-to-b from-blue-500 to-blue-700 text-white flex items-center">
+      <div class="container mx-auto px-8">
         <h1 class="text-4xl font-bold mb-4">Welcome to 0xSocial</h1>
         <p class="text-lg mb-8">Seamless social profile creations.</p>
         <a
           href="https://example.com"
           target="_blank"
-          class="py-2 px-6 bg-white text-blue-500 rounded-full font-medium text-lg shadow hover:bg-blue-100"
+          class="py-3 px-8 bg-white text-blue-500 rounded-full font-medium text-lg shadow hover:bg-blue-100"
         >
           Get Started
         </a>
@@ -74,5 +74,11 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.container {
+  max-width: 960px;
+}
+</style>
 
 
