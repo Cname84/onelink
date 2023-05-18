@@ -18,34 +18,39 @@
           v-model:email="data.e"
           v-model:whatsapp="data.w"
           v-model:youtube="data.y"
-        />
-        <app-form-hr />
-        <app-form-links v-model="data.ls" />
-      </div>
       <div class="border-t bg-white flex items-center">
-        <button
-          @click="prefillDemoData"
-          class="h-12 flex items-center space-x-2 px-4 border-r text-xs font-medium bg-white text-slate-700"
-        >
-          <span> Add demo data </span>
-          <icon name="mdi:code-json" class="h-4 w-4" />
-        </button>
-        <a
-          href="https://t.me/OxSocial"
-          target="_blank"
-          class="h-12 flex items-center space-x-2 px-4 border-r text-xs font-medium bg-white text-slate-700"
-        >
-          <span>Telegram</span>
-          <icon name="ph:paper-plane-tilt-bold" class="h-4 w-4" />
-        </a>
-      </div>
-    </div>
-    <app-form-preview :data="data" />
-    <a
-      href="https://twitter.com/0xsocialETH"
-      target="_blank"
-      class="absolute bottom-0 right-0 bg-white rounded-tl-lg shadow px-4 py-1 font-medium text-sm text-gray-500"
-    >
+  <button
+    @click="prefillDemoData"
+    class="h-12 flex items-center space-x-2 px-4 border-r text-xs font-medium bg-white text-slate-700"
+  >
+    <span> Add demo data </span>
+    <icon name="mdi:code-json" class="h-4 w-4" />
+  </button>
+  <a
+    href="https://t.me/OxSocial"
+    target="_blank"
+    class="h-12 flex items-center space-x-2 px-4 border-r text-xs font-medium bg-white text-slate-700"
+  >
+    <span>Telegram</span>
+    <icon name="ph:paper-plane-tilt-bold" class="h-4 w-4" />
+  </a>
+  <button
+    @click="customButtonAction"
+    class="h-12 flex items-center space-x-2 px-4 border-r text-xs font-medium bg-white text-slate-700"
+  >
+    <span>Custom Button</span>
+    <icon name="mdi:star" class="h-4 w-4" />
+  </button>
+  <a
+    href="https://example.com"
+    target="_blank"
+    class="h-12 flex items-center space-x-2 px-4 border-r text-xs font-medium bg-white text-slate-700"
+  >
+    <span>Custom Link Button</span>
+    <icon name="mdi:link" class="h-4 w-4" />
+  </a>
+</div>
+
       Made by 0xSocial 
     </a>
   </div>
