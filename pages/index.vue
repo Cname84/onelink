@@ -3,7 +3,19 @@
     <div class="hero">
       <h1 class="hero-title">Welcome to 0xSocial</h1>
       <p class="hero-subtitle">0xSocial is revolutionizing social profile creations.</p>
-      <button class="scroll-button" @click="scrollToContent">Scroll Down</button>
+      <div class="hero-buttons">
+        <button @click="prefillDemoData" class="button">
+          Add demo data
+        </button>
+        <div>
+          <button v-if="clipboardSupported" @click="publish" class="button">
+            Publish
+          </button>
+          <a href="https://t.me/OxSocial" target="_blank" class="button">
+            <img src="https://e1.pxfuel.com/desktop-wallpaper/700/536/desktop-wallpaper-telegram-logo-png-transparent-telegram-logo-png-telegram-icon.jpg" alt="Telegram" class="social-icon" />
+          </a>
+        </div>
+      </div>
     </div>
     <div class="grid grid-cols-3 divide-x">
       <div class="col-span-2 flex flex-col bg-slate-100">
@@ -11,13 +23,38 @@
           <h1>Welcome to 0xSocial</h1>
           <p>0xSocial is revolutionizing social profile creations.</p>
 
-          <!-- Rest of the code -->
-
+          <app-form-profile
+            v-model:name="data.n"
+            v-model:desc="data.d"
+            v-model:image="data.i"
+          />
+          <app-form-hr />
+          <app-form-social-links
+            v-model:facebook="data.f"
+            v-model:twitter="data.t"
+            v-model:instagram="data.ig"
+            v-model:github="data.gh"
+            v-model:telegram="data.tg"
+            v-model:linkedin="data.l"
+            v-model:email="data.e"
+            v-model:whatsapp="data.w"
+            v-model:youtube="data.y"
+          />
+          <app-form-hr />
+          <app-form-links v-model="data.ls" />
         </div>
-        <div class="border-t bg-white flex items-center justify-between top-buttons">
-          <button @click="prefillDemoData" class="button">Add demo data</button>
-          <button v-if="clipboardSupported" @click="publish" class="button">Publish</button>
-          <a href="https://t.me/OxSocial" target="_blank" class="button">Telegram</a>
+        <div class="border-t bg-white flex items-center justify-between">
+          <button @click="prefillDemoData" class="button">
+            Add demo data
+          </button>
+          <div>
+            <button v-if="clipboardSupported" @click="publish" class="button">
+              Publish
+            </button>
+            <a href="https://t.me/OxSocial" target="_blank" class="button">
+              <img src="telegram.png" alt="Telegram" class="social-icon" />
+            </a>
+          </div>
         </div>
       </div>
       <app-form-preview :data="data" />
@@ -52,7 +89,8 @@ const prefillDemoData = () => {
   data.value = {
     n: "Elon Musk",
     d: "I’m Elon Musk, the richest person on earth. Also a pro memer.",
-    i: "https://c.ndtvimg.com/2023-01/e3p66s1o_elon-musk-afp-650_650x400_26_January_23.jpg?im=Resize=(1230,900)",
+    i:
+      "https://c.ndtvimg.com/2023-01/e3p66s1o_elon-musk-afp-650_650x400_26_January_23.jpg?im=Resize=(1230,900)",
     f: "https://www.facebook.com/john_snow",
     t: "https://twitter.com/john_snow",
     ig: "https://www.instagram.com/john_snow",
@@ -102,16 +140,6 @@ const publish = () => {
     });
   }
 };
-
-const scrollToContent = () => {
-  const contentElement = document.querySelector(".grid");
-  if (contentElement) {
-    window.scrollTo({
-      top: contentElement.offsetTop,
-      behavior: "smooth",
-    });
-  }
-};
 </script>
 
 <style scoped>
@@ -125,46 +153,28 @@ const scrollToContent = () => {
 }
 
 .hero {
-  background-color: #f3f4f6;
+  background-color: #f2f2f2;
   padding: 2rem;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
 .hero-title {
   font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
 }
 
 .hero-subtitle {
   font-size: 1.25rem;
-  color: #6b7280;
+  color: #666;
 }
 
-.scroll-button {
-  margin-top: 2rem;
-  background-color: #4f46e5;
-  color: #fff;
-  border: none;
-  padding: 1rem 2rem;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.scroll-button:hover {
-  background-color: #4338ca;
-}
-
-.grid {
-  gap: 1rem;
-  flex-grow: 1;
-  margin-top: 2rem;
-}
-
-.top-buttons {
-  margin-top: 2rem;
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
 .button {
@@ -181,6 +191,16 @@ const scrollToContent = () => {
   cursor: pointer;
 }
 
+.social-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.grid {
+  gap: 1rem;
+  flex-grow: 1;
+}
+
 .attribution {
   margin-top: auto;
   background-color: #fff;
@@ -193,5 +213,4 @@ const scrollToContent = () => {
   text-decoration: none;
 }
 </style>
-
 
