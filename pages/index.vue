@@ -1,6 +1,3 @@
-Here's the updated code with the watermark added to the full code you provided:
-
-```html
 <template>
   <div class="h-screen grid grid-cols-3 divide-x">
     <div class="col-span-2 h-screen flex flex-col bg-slate-100">
@@ -115,7 +112,4 @@ const publish = () => {
   });
 };
 </script>
-```
-
-In this updated code, the watermark is placed inside the `div` element with the class `flex-1 overflow-y-auto p-8`, ensuring it appears within the main content area.
 
