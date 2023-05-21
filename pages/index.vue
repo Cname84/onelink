@@ -1,5 +1,9 @@
 <template>
   <div class="container">
+    <div class="hero">
+      <h1 class="hero-title">Welcome to 0xSocial</h1>
+      <p class="hero-subtitle">0xSocial is revolutionizing social profile creations.</p>
+    </div>
     <div class="grid grid-cols-3 divide-x">
       <div class="col-span-2 flex flex-col bg-slate-100">
         <div class="overflow-y-auto p-8">
@@ -147,6 +151,25 @@ const publish = () => {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.hero {
+  background-color: #f2f2f2;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: #666;
 }
 
 .grid {
