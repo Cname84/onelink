@@ -7,41 +7,62 @@
     <div class="h-screen grid grid-cols-3 divide-x">
       <div class="col-span-2 h-screen flex flex-col bg-slate-100">
         <div class="flex-1 overflow-y-auto p-8">
-          <app-form-profile
-            v-model:name="data.n"
-            v-model:desc="data.d"
-            v-model:image="data.i"
-          />
-          <app-form-hr />
-          <app-form-social-links
-            v-model:facebook="data.f"
-            v-model:twitter="data.t"
-            v-model:instagram="data.ig"
-            v-model:github="data.gh"
-            v-model:telegram="data.tg"
-            v-model:linkedin="data.l"
-            v-model:email="data.e"
-            v-model:whatsapp="data.w"
-            v-model:youtube="data.y"
-          />
-          <app-form-hr />
-          <app-form-links v-model="data.ls" />
-        
-          <!-- Watermark -->
-          <div class="absolute bottom-0 right-0 bg-white rounded-tl-lg shadow px-4 py-1 font-medium text-sm text-gray-500">
-            Powered by 0xsocial
-          </div>
-        </div>
+        <template>
+        <!-- Existing code here -->
+<template>
+  <div class="h-screen grid grid-cols-3 divide-x">
+    <div class="col-span-2 h-screen flex flex-col bg-slate-100">
+      <div class="flex-1 overflow-y-auto p-8">
+        <app-form-profile
+          v-model:name="data.n"
+          v-model:desc="data.d"
+          v-model:image="data.i"
+        />
+        <app-form-hr />
+        <app-form-social-links
+          v-model:facebook="data.f"
+          v-model:twitter="data.t"
+          v-model:instagram="data.ig"
+          v-model:github="data.gh"
+          v-model:telegram="data.tg"
+          v-model:linkedin="data.l"
+          v-model:email="data.e"
+          v-model:whatsapp="data.w"
+          v-model:youtube="data.y"
+             />
+        <app-form-hr />
+        <app-form-links v-model="data.ls" />
       </div>
-      <app-form-preview :data="data" />
-      <a
-        href="https://twitter.com/0xsocialETH"
-        target="_blank"
-        class="absolute bottom-0 right-0 bg-white rounded-tl-lg shadow px-4 py-1 font-medium text-sm text-gray-500"
-      >
-        Made by 0xSocial 
-      </a>
+        <button
+          @click="prefillDemoData"
+          class="h-12 flex items-center space-x-2 px-4 border-r text-xs font-medium bg-white text-slate-700"
+        >
+          <span> demo </span>
+          <icon name="mdi:code-json" class="h-4 w-4" />
+            </button>
+        >
+          <span> Publish </span>
+        </button>
+          @click="publish"
+          class="h-12 flex items-center space-x-2 px-4 border-r text-xs font-medium bg-white text-slate-700"
+        <a
+          href="https://t.me/OxSocial"
+          target="_blank"
+          class="h-12 flex items-center space-x-2 px-4 border-r text-xs font-medium bg-white text-slate-700"
+        >
+          <span>Telegram</span>
+          <icon name="ph:paper-plane-tilt-bold" class="h-4 w-4" />
+        </a>
+      </div>
     </div>
+    <app-form-preview :data="data" />
+    <a
+      href="https://twitter.com/0xsocialETH"
+      target="_blank"
+      class="absolute bottom-0 right-0 bg-white rounded-tl-lg shadow px-4 py-1 font-medium text-sm text-gray-500"
+    >
+      Made by 0xSocial 
+    </a>
   </div>
 </template>
 
@@ -116,4 +137,54 @@ const publish = () => {
   });
 };
 </script>
-
+        <!-- Watermark -->
+        <div class="absolute bottom-0 right-0 bg-white rounded-tl-lg shadow px-4 py-1 font-medium text-sm text-gray-500">
+          Powered by 0xsocial
+        </div>
+      </div>
+    </div>
+        
+        
+        
+        
+          <app-form-profile
+            v-model:name="data.n"
+            v-model:desc="data.d"
+            v-model:image="data.i"
+          />
+          <app-form-hr />
+          <app-form-social-links
+            v-model:facebook="data.f"
+            v-model:twitter="data.t"
+            v-model:instagram="data.ig"
+            v-model:github="data.gh"
+            v-model:telegram="data.tg"
+            v-model:linkedin="data.l"
+            v-model:email="data.e"
+            v-model:whatsapp="data.w"
+            v-model:youtube="data.y"
+          />
+          <app-form-hr />
+          <app-form-links v-model="data.ls" />
+        
+          <!-- Watermark -->
+          <div class="absolute bottom-0 right-0 bg-white rounded-tl-lg shadow px-4 py-1 font-medium text-sm text-gray-500">
+            Powered by 0xsocial
+          </div>
+        </div>
+      </div>
+      <app-form-preview :data="data" />
+      <a
+        href="https://twitter.com/0xsocialETH"
+        target="_blank"
+        class="absolute bottom-0 right-0 bg-white rounded-tl-lg shadow px-4 py-1 font-medium text-sm text-gray-500"
+      >
+        Made by 0xSocial 
+      </a>
+const publish = () => {
+  const url = `${window.location.origin}/1?data=${encodeData(data.value)}`;
+  navigator.clipboard.writeText(url).then(() => {
+    alert("Link copied to clipboard");
+  });
+};
+</script>
