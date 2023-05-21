@@ -1,12 +1,11 @@
 <template>
-  <div>
-    <header>
-      <h1>Welcome to 0xSocial</h1>
-      <p>0xSocial is revolutionizing social profile creations.</p>
-    </header>
-    <div class="h-screen grid grid-cols-3 divide-x">
-      <div class="col-span-2 h-screen flex flex-col bg-slate-100">
-        <div class="flex-1 overflow-y-auto p-8">
+  <div class="container">
+    <div class="grid grid-cols-3 divide-x">
+      <div class="col-span-2 flex flex-col bg-slate-100">
+        <div class="overflow-y-auto p-8">
+          <h1>Welcome to 0xSocial</h1>
+          <p>0xSocial is revolutionizing social profile creations.</p>
+
           <app-form-profile
             v-model:name="data.n"
             v-model:desc="data.d"
@@ -24,39 +23,40 @@
             v-model:whatsapp="data.w"
             v-model:youtube="data.y"
           />
-           <app-form-hr />
-        <app-form-links v-model="data.ls" />
+          <app-form-hr />
+          <app-form-links v-model="data.ls" />
+        </div>
+        <div class="border-t bg-white flex items-center">
+          <button
+            @click="prefillDemoData"
+            class="button"
+          >
+            Add demo data
+          </button>
+          <button
+            @click="publish"
+            class="button"
+          >
+            Publish
+          </button>
+          <a
+            href="https://t.me/OxSocial"
+            target="_blank"
+            class="button"
+          >
+            Telegram
+          </a>
+        </div>
       </div>
-      <div class="border-t bg-white flex items-center">
-        <button
-          @click="prefillDemoData"
-          class="h-12 flex items-center space-x-2 px-4 border-r text-xs font-medium bg-white text-slate-700"
-        >
-          <span> Add demo data </span>
-          <icon name="mdi:code-json" class="h-4 w-4" />
-        </button>
-          @click="publish"
-          class="h-12 flex items-center space-x-2 px-4 border-r text-xs font-medium bg-white text-slate-700"
-       
-        <a
-          href="https://t.me/OxSocial"
-          target="_blank"
-          class="h-12 flex items-center space-x-2 px-4 border-r text-xs font-medium bg-white text-slate-700"
-        >
-          <span>Telegram</span>
-          <icon name="ph:paper-plane-tilt-bold" class="h-4 w-4" />
-        </a>
-      </div>
+      <app-form-preview :data="data" />
     </div>
-    <app-form-preview :data="data" />
     <a
       href="https://twitter.com/0xsocialETH"
       target="_blank"
-      class="absolute bottom-0 right-0 bg-white rounded-tl-lg shadow px-4 py-1 font-medium text-sm text-gray-500"
+      class="attribution"
     >
-      Made by 0xSocial 
-      </a>
-    </div>
+      Made by 0xSocial
+    </a>
   </div>
 </template>
 
@@ -131,3 +131,43 @@ const publish = () => {
   });
 };
 </script>
+
+<style scoped>
+.container {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 1rem;
+}
+
+.grid {
+  gap: 1rem;
+}
+
+.button {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: #fff;
+  color: #374151;
+  cursor: pointer;
+}
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #fff;
+  border-radius: 0.375rem 0 0 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #9ca3af;
+  text-decoration: none;
+}
+</style>
