@@ -1,41 +1,47 @@
 <template>
-  <div class="h-screen grid grid-cols-3 divide-x">
-    <div class="col-span-2 h-screen flex flex-col bg-slate-100">
-      <div class="flex-1 overflow-y-auto p-8">
-        <app-form-profile
-          v-model:name="data.n"
-          v-model:desc="data.d"
-          v-model:image="data.i"
-        />
-        <app-form-hr />
-        <app-form-social-links
-          v-model:facebook="data.f"
-          v-model:twitter="data.t"
-          v-model:instagram="data.ig"
-          v-model:github="data.gh"
-          v-model:telegram="data.tg"
-          v-model:linkedin="data.l"
-          v-model:email="data.e"
-          v-model:whatsapp="data.w"
-          v-model:youtube="data.y"
-        />
-        <app-form-hr />
-        <app-form-links v-model="data.ls" />
+  <div>
+    <header>
+      <h1>Welcome to My Profile</h1>
+      <p>Fill in the form below to create your profile.</p>
+    </header>
+    <div class="h-screen grid grid-cols-3 divide-x">
+      <div class="col-span-2 h-screen flex flex-col bg-slate-100">
+        <div class="flex-1 overflow-y-auto p-8">
+          <app-form-profile
+            v-model:name="data.n"
+            v-model:desc="data.d"
+            v-model:image="data.i"
+          />
+          <app-form-hr />
+          <app-form-social-links
+            v-model:facebook="data.f"
+            v-model:twitter="data.t"
+            v-model:instagram="data.ig"
+            v-model:github="data.gh"
+            v-model:telegram="data.tg"
+            v-model:linkedin="data.l"
+            v-model:email="data.e"
+            v-model:whatsapp="data.w"
+            v-model:youtube="data.y"
+          />
+          <app-form-hr />
+          <app-form-links v-model="data.ls" />
         
-        <!-- Watermark -->
-        <div class="absolute bottom-0 right-0 bg-white rounded-tl-lg shadow px-4 py-1 font-medium text-sm text-gray-500">
-          Powered by 0xsocial
+          <!-- Watermark -->
+          <div class="absolute bottom-0 right-0 bg-white rounded-tl-lg shadow px-4 py-1 font-medium text-sm text-gray-500">
+            Powered by 0xsocial
+          </div>
         </div>
       </div>
+      <app-form-preview :data="data" />
+      <a
+        href="https://twitter.com/0xsocialETH"
+        target="_blank"
+        class="absolute bottom-0 right-0 bg-white rounded-tl-lg shadow px-4 py-1 font-medium text-sm text-gray-500"
+      >
+        Made by 0xSocial 
+      </a>
     </div>
-    <app-form-preview :data="data" />
-    <a
-      href="https://twitter.com/0xsocialETH"
-      target="_blank"
-      class="absolute bottom-0 right-0 bg-white rounded-tl-lg shadow px-4 py-1 font-medium text-sm text-gray-500"
-    >
-      Made by 0xSocial 
-    </a>
   </div>
 </template>
 
@@ -90,9 +96,7 @@ const prefillDemoData = () => {
         u: "https://reactjs.org/",
       },
       {
-        l:
-
- "Donate for our cause",
+        l: "Donate for our cause",
         i: "iconoir:donate",
         u: "https://who.int",
       },
