@@ -26,26 +26,29 @@
           <app-form-hr />
           <app-form-links v-model="data.ls" />
         </div>
-        <div class="border-t bg-white flex items-center">
+        <div class="border-t bg-white flex items-center justify-between">
           <button
             @click="prefillDemoData"
             class="button"
           >
             Add demo data
           </button>
-          <button
-            @click="publish"
-            class="button"
-          >
-            Publish
-          </button>
-          <a
-            href="https://t.me/OxSocial"
-            target="_blank"
-            class="button"
-          >
-            Telegram
-          </a>
+          <div>
+            <button
+              v-if="clipboardSupported"
+              @click="publish"
+              class="button"
+            >
+              Publish
+            </button>
+            <a
+              href="https://t.me/OxSocial"
+              target="_blank"
+              class="button"
+            >
+              Telegram
+            </a>
+          </div>
         </div>
       </div>
       <app-form-preview :data="data" />
@@ -124,11 +127,15 @@ const prefillDemoData = () => {
   };
 };
 
+const clipboardSupported = "navigator" in window && "clipboard" in navigator;
+
 const publish = () => {
   const url = `${window.location.origin}/1?data=${encodeData(data.value)}`;
-  navigator.clipboard.writeText(url).then(() => {
-    alert("Link copied to clipboard");
-  });
+  if (clipboardSupported) {
+    navigator.clipboard.writeText(url).then(() => {
+      alert("Link copied to clipboard");
+    });
+  }
 };
 </script>
 
@@ -137,10 +144,14 @@ const publish = () => {
   margin: 0 auto;
   max-width: 960px;
   padding: 1rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .grid {
   gap: 1rem;
+  flex-grow: 1;
 }
 
 .button {
@@ -158,9 +169,7 @@ const publish = () => {
 }
 
 .attribution {
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  margin-top: auto;
   background-color: #fff;
   border-radius: 0.375rem 0 0 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
