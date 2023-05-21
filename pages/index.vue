@@ -1,8 +1,8 @@
 <template>
   <div>
     <header>
-      <h1>Welcome to My Profile</h1>
-      <p>Fill in the form below to create your profile.</p>
+      <h1>Welcome to 0xSocial</h1>
+      <p>0xSocial is revolutionising social profile creations.</p>
     </header>
     <div class="h-screen grid grid-cols-3 divide-x">
       <div class="col-span-2 h-screen flex flex-col bg-slate-100">
